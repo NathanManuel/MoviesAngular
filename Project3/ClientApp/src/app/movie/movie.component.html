@@ -13,6 +13,7 @@
       <th>Name</th>
       <th>Movie Length</th>
       <th></th>
+      <th></th>
     
     </tr>
   </thead>
@@ -22,6 +23,7 @@
       <td>{{ movie.name }}</td>
       <td>{{ movie.movieL }} m.</td>
       <td><button class="btn btn-primary" (click)="deleteMovie(movie)">Delete Movie</button></td>
+      <td><a class="btn btn-primary" href="/movie-update?id={{movie.id}}">Update Movie</a></td>
 
     </tr>
   </tbody>
