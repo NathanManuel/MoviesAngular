@@ -4,10 +4,12 @@ import { Movie } from './movie.models';
 
 @Component({
   selector: 'app-movie',
-  templateUrl: './movie.component.html'
+  templateUrl: './movie.component.html',
+  styleUrls: ["StyleSheet.css"]
 })
 export class MovieComponent {
   public movies: Movie[];
+  displayedColumns: string[] = ['id', 'name', 'movieL', 'update', 'delete'];
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
     this.loadMovies();
