@@ -6,28 +6,7 @@
 
 <p *ngIf="!movies"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movies">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Movie Length</th>
-      <th></th>
-      <th></th>
-    
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let movie of movies">
-      <td>{{ movie.id }}</td>
-      <td>{{ movie.name }}</td>
-      <td>{{ movie.movieL }} m.</td>
-      <td><button class="btn btn-primary" (click)="deleteMovie(movie)">Delete Movie</button></td>
-      <td><a class="btn btn-primary" href="/movie-update?id={{movie.id}}">Update Movie</a></td>
 
-    </tr>
-  </tbody>
-</table>
 
 <table mat-table [dataSource]="movies" class="mat-elevation-z8">
 
@@ -45,7 +24,7 @@
     <td mat-cell *matCellDef="let movie"> {{movie.name}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
+  <!-- Movie Length Column -->
   <ng-container matColumnDef="movieL">
     <th mat-header-cell *matHeaderCellDef> Movie Length </th>
     <td mat-cell *matCellDef="let movie"> {{movie.movieL}} </td>
@@ -53,12 +32,22 @@
 
   <ng-container matColumnDef="update">
     <th mat-header-cell *matHeaderCellDef> Update </th>
-    <td mat-cell *matCellDef="let movie"> <a class="btn btn-primary" href="/movie-update?id={{movie.id}}">Edit</a></td>
+    <td mat-cell *matCellDef="let movie"> <a matTooltip="Update {{movie.name}}" class="btn btn-primary" href="/movie-update?id={{movie.id}}">Update</a></td>
+
+   <!-- <button mat-icon-button color="primary" matTooltip="Update {{movie.name}}" aria-label="Example icon button with a home icon">
+      <mat-icon aria-hidden="false" aria-label="Examplae" href="/movie-update?id={{movie.id}}" style="cursor:pointer">Update</mat-icon>
+    </button>-->
   </ng-container>
 
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef> Delete </th>
-    <td mat-cell *matCellDef="let movie"><button class="btn btn-primary" (click)="deleteMovie(movie)">Delete</button></td>
+    <td mat-cell *matCellDef="let movie">
+   <!--   <button mat-icon-button="" matTooltip="Delete {{movie.name}}" class="btn btn-primary" (click)="deleteMovie(movie)">Delete</button>
+    </td>-->
+
+  <button mat-icon-button color="primary" matTooltip="Delete {{movie.name}}" aria-label="Example icon button with a home icon">
+    <mat-icon aria-hidden="false" aria-label="Examplae" (click)="deleteMovie(movie)" style="cursor:pointer">Delete</mat-icon>
+  </button>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

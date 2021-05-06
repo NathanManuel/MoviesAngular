@@ -5,7 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movie-update',
-  templateUrl: './movie-update.component.html'
+  templateUrl: './movie-update.component.html',
+  styleUrls: ['movie-addSheet.css']
 })
 export class MovieUpdateComponent implements OnInit {
   public id: string;

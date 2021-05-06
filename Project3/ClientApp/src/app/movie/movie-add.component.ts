@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-add',
-  templateUrl: './movie-add.component.html'
+  templateUrl: './movie-add.component.html',
+  styleUrls: ['movie-addSheet.css']
 })
 export class MovieAddComponent {
 

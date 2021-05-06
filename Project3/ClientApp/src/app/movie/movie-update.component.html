@@ -1,9 +1,25 @@
 <h1 id="tableLabel">Update Movie</h1>
-Movie name:
-<input [(ngModel)]="movie.name" /><br />
 
-Movie Length:
-<input [(ngModel)]="movie.movieL" /><br />
+
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-label>Movie name</mat-label>
+        <input matInput placeholder="Name" [(ngModel)]="movie.name" />
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-label>Movie Length</mat-label>
+        <input matInput placeholder="Length" [(ngModel)]="movie.movieL" />
+      </mat-form-field>
+    </td>
+  </tr>
+
+</table>
 
 
 <button class="btn btn-primary" (click)="updateMovie(movie)">Update movie</button>
