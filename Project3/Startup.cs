@@ -26,7 +26,7 @@ namespace Project3
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/dist";
+                configuration.RootPath = "wwwroot/dist";
             });
 
             services.AddDbContext<Project3Context>(options =>
@@ -49,10 +49,12 @@ namespace Project3
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            if (!env.IsDevelopment())
+            /*if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();
-            }
+            }*/
+
+                app.UseSpaStaticFiles();
 
             app.UseRouting();
 
@@ -68,12 +70,12 @@ namespace Project3
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
-                spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = "wwwroot";
 
-                if (env.IsDevelopment())
+              /*  if (env.IsDevelopment())
                 {
                     spa.UseAngularCliServer(npmScript: "start");
-                }
+                }*/
             });
         }
     }

@@ -40,12 +40,12 @@
   </ng-container>
 
   <ng-container matColumnDef="delete">
-    <th mat-header-cell *matHeaderCellDef> Delete </th>
-    <td mat-cell *matCellDef="let movie">
+    <th  mat-header-cell *matHeaderCellDef> Delete </th>
+    <td  mat-cell *matCellDef="let movie">
    <!--   <button mat-icon-button="" matTooltip="Delete {{movie.name}}" class="btn btn-primary" (click)="deleteMovie(movie)">Delete</button>
     </td>-->
 
-  <button mat-icon-button color="primary" matTooltip="Delete {{movie.name}}" aria-label="Example icon button with a home icon">
+  <button class="btn btn-primary" color="primary" matTooltip="Delete {{movie.name}}" aria-label="Example icon button with a home icon">
     <mat-icon aria-hidden="false" aria-label="Examplae" (click)="deleteMovie(movie)" style="cursor:pointer">Delete</mat-icon>
   </button>
   </ng-container>
